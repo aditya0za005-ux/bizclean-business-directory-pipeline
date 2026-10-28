@@ -1,0 +1,25 @@
+{
+  "Name": "bizclean-warehouse-crawler",
+  "Role": "arn:aws:iam::382525920744:role/BizCleanGlueRole",
+  "DatabaseName": "bizclean_catalog",
+  "Description": "Crawler for BizClean dimensional warehouse tables",
+  "TablePrefix": "wh_",
+  "Targets": {
+    "S3Targets": [
+      {"Path": "s3://bizclean-chicago-licenses-2026-364569/warehouse/dim_business/"},
+      {"Path": "s3://bizclean-chicago-licenses-2026-364569/warehouse/dim_location/"},
+      {"Path": "s3://bizclean-chicago-licenses-2026-364569/warehouse/dim_geography/"},
+      {"Path": "s3://bizclean-chicago-licenses-2026-364569/warehouse/dim_license_type/"},
+      {"Path": "s3://bizclean-chicago-licenses-2026-364569/warehouse/dim_business_activity/"},
+      {"Path": "s3://bizclean-chicago-licenses-2026-364569/warehouse/dim_date/"},
+      {"Path": "s3://bizclean-chicago-licenses-2026-364569/warehouse/fact_business_license/"}
+    ]
+  },
+  "SchemaChangePolicy": {
+    "UpdateBehavior": "UPDATE_IN_DATABASE",
+    "DeleteBehavior": "DEPRECATE_IN_DATABASE"
+  },
+  "RecrawlPolicy": {
+    "RecrawlBehavior": "CRAWL_EVERYTHING"
+  }
+}
