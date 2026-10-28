@@ -1,0 +1,26 @@
+BIZCLEAN WAREHOUSE VALIDATION
+============================
+Silver source rows: 48580
+Fact rows: 48580
+Unique license IDs: 48580
+Fact row count matches Silver: True
+License IDs unique: True
+
+DIMENSION ROW COUNTS
+dim_business: 37650
+dim_location: 35395
+dim_geography: 6360
+dim_license_type: 59
+dim_business_activity: 2304
+dim_date: 9660
+
+INVALID DATES BEFORE 1900
+application_created_date: 0
+payment_date: 0
+license_start_date: 0
+expiration_date: 1
+date_issued: 0
+license_status_change_date: 0
+
+All dimension foreign keys validated: YES
+Saved fact read-back validated: YES
